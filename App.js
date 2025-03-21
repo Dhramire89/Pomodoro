@@ -11,19 +11,19 @@ const colors = ["#F4A261", "#2A9D8F", "#8ECAE6"]
 
 export default function App() {
 
-  const [isWorking, setIsWorking] = useState(false); 
-  const [time, setTime] = useState(25 * 60); 
-  const [currentTime, setCurrentTime] = useState("POMO" | "SHORT" | "LONG"); 
+  const [isWorking, setIsWorking] = useState(false);
+  const [time, setTime] = useState(25 * 60);
+  const [currentTime, setCurrentTime] = useState("POMO" | "SHORT" | "LONG");
 
   return (
-    <SafeAreaView style={[styles.container, {backgroundColor: colors[currentTime]}]}> 
-        <View style={styles.ViewContainer}>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors[currentTime] }]}>
+      <View style={styles.ViewContainer}>
         <Text style={styles.text} >Pomodoro</Text>
-        <Header currentTime={currentTime} setCurrentTime={setCurrentTime} setTime={setTime}/>
-        <Timer time={time}/>
-        <StatusBar style='auto'/>
-        </View>
-      
+        <Header currentTime={currentTime} setCurrentTime={setCurrentTime} setTime={setTime} />
+        <Timer time={time} />
+        <StatusBar style='auto' />
+      </View>
+
     </SafeAreaView>
   );
 }
@@ -31,16 +31,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 15, 
-    
+    paddingHorizontal: 15,
+
   },
   text: {
-    fontSize: 32, 
+    fontSize: 32,
     fontWeight: 'bold'
   },
-  ViewContainer :{
-    paddingTop: Platform.OS ==="android" && 30,
+  ViewContainer: {
+    paddingTop: Platform.OS === "android" && 30,
     paddingTop: 30,
-    flex: 0.3, 
+    flex: 0.3,
   },
 });
